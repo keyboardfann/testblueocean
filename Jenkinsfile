@@ -28,18 +28,6 @@ podTemplate(label: label, containers: [
         echo "构建 Docker 镜像阶段"
       }
     }
-    stage('运行 Kubectl') {
-      container('kubectl') {
-        echo "查看 K8S 集群 Pod 列表"
-        sh "kubectl get pods"
-      }
-    }
-    stage('运行 Helm') {
-      container('helm') {
-        echo "查看 Helm Release 列表"
-        sh "helm list"
-      }
-    }
   }
   post {
         success {
