@@ -2,9 +2,7 @@ pipeline {
     agent none
     stages {
         stage('Test') {
-            agent {
-                label 'slave-${UUID.randomUUID().toString()}'
-            }
+            agent { docker 'busybox' }
             steps {
                 echo 'Testing..'
             }
