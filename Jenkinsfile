@@ -28,8 +28,7 @@ podTemplate(label: label, containers: [
         echo "构建 Docker 镜像阶段"
       }
     }
-  }
-  post {
+	post {
         success {
             slackSend color: '#7CFC00',
             message: "@channel ${env.JOB_BASE_NAME} success. (${env.BUILD_URL})"
@@ -43,4 +42,6 @@ podTemplate(label: label, containers: [
             message: "@channel ${env.JOB_BASE_NAME} back to success."
         }
     }
+  }
+
 }
